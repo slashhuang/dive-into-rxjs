@@ -8,7 +8,6 @@ const $input = $('#input');
 const $results = $('#results');
 
 /* Only get the value from each key up */
-debugger;
 var keyups = Rx.Observable.fromEvent($input, 'keyup')
   .pluck('target', 'value')
   .filter(text => text.length > 2 );
@@ -31,7 +30,9 @@ var debounced = keyups.debounce(1000 /* ms */);
 /* Now get only distinct values, so we eliminate the arrows and other control characters */
 var distinct = debounced.distinctUntilChanged();
 
-
+// we can instantly bind to any Promises A+ implementation
+// through the Rx.Observable.fromPromise method
+/*rxJS在处理数据流的时候，通知机制采用了Promise的的形式，所有的promiseA+测试通过的库都可以轻松集成进rxjs*/
 function searchWikipedia (term) {
   return $.ajax({
     url: 'https://en.wikipedia.org/w/api.php',

@@ -7,7 +7,8 @@ var open = require("open");
 open("http://localhost:8001/webpack-dev-server/");
 module.exports = {
     entry: {
-        example:"./example/example.js"
+        example:"./example/example.js",
+        creator:"./example/creator.js"
     },
     output: {
         publicPath:'/dist/',
