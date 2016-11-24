@@ -1,7 +1,8 @@
 # dive-into-rxjs
 
-> 对rxjs的使用编写demo示例
-> 对rxjs的源码及设计思想做简单分析
+> 对rxjs的使用编写demo示例并对rxJS的设计思想做简单分析
+> 主程序示例代码在'''/example/*.js'''下面
+
 
 ### 使用
 ```bash
