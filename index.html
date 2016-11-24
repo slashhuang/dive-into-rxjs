@@ -3,24 +3,44 @@
     <meta charset="utf-8">
     <title>dive-into-rxJS</title>
     <style>
-        [id='*']{
+        *{
+            font-size:16px;
+        }
+        div{
+             padding: auto 20px;
+        }
+        input{
+            width:200px;
+            padding:10px;
+        }
+        div.fl{
             float:left;
             width:300px;
-            height:100px;
+            height:300px;
         }
-        #fromEvent{
-            background:purple;
+        p{
+            text-align: center;
+            padding:4px auto;
         }
-        #create{
-            background:purple;
+        .event{
+            border-right:2px dashed green;
+        }
+        .create{
+            background:2px dashed green;
         }
     </style>
   </head>
   <body class="directory">
-    <input id="input" type="text" placeholder="测试rxJS" autocomplete="off">
-    <div id='fromEvent'>fromEvent测试</div>
+    <div class='event fl'>
+        <p>fromEvent测试</p>
+        <input id="input" type="text" placeholder="请输入至少3位数字测试rxJS" autocomplete="off">
+        <div id='fromEvent'>fromEvent测试</div>
+    </div>
+     <div class='create fl'>
+         <p>Observable.create测试</p>
+         <div id='create'></div>
+    </div>
 
-    <div id='create'>Observable.create测试</div>
     <script type="text/javascript" src='/dist/fromEvent.js'></script>
     <script type="text/javascript" src='/dist/creator.js'></script>
   </body>
