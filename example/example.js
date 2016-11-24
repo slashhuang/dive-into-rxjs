@@ -43,7 +43,8 @@ function searchWikipedia (term) {
     }
   }).promise();
 };
-
+// call flatMapLatest to get the value and ensure we're not introducing any out of order sequence calls.
+/*调用flatMapLatest保证数据流的顺序执行*/
 let suggestions = distinct.flatMapLatest(searchWikipedia);
 suggestions.subscribe(
   data => {
