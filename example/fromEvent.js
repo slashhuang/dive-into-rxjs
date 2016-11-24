@@ -1,6 +1,6 @@
 /**
- *  created by slashhuang 11.24
- * 仿照rxJS的官方写法
+ * created by slashhuang 11.24
+ * 调用rxJS的fromEvent来做为数据源
  */
 let Rx = require('rx');
 let $ = require('jquery');

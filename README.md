@@ -25,10 +25,11 @@
 
     # rxJS的数据流处理方式
 
-    let  = Rx.Observable.create(
-                (observer)=>
-                    $.ajax(options).promise().then(observer.next)
-            ).subscribe(data => {/*加工你的数据*/})
+    let Test = Rx.Observable.create(
+                (observer)=>$.ajax(options)
+                             .promise()
+                             .then((data)=>observer.next(data)))
+    Test.subscribe(data => {/*加工你的数据*/})
 ```
 
 - [数据通知机制参考promiseA+规范](https://github.com/promises-aplus/promises-spec)
