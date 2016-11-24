@@ -8,6 +8,7 @@ const $input = $('#input');
 const $results = $('#results');
 
 /* Only get the value from each key up */
+debugger;
 var keyups = Rx.Observable.fromEvent($input, 'keyup')
   .pluck('target', 'value')
   .filter(text => text.length > 2 );
