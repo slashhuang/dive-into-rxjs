@@ -4,7 +4,7 @@
 
 var path =require('path');
 var open = require("open");
-open("http://localhost:8001");
+open("http://localhost:8001/webpack-dev-server/");
 module.exports = {
     entry: {
         example:"./example/example.js"
