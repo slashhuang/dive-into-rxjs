@@ -3,6 +3,8 @@
  */
 
 var path =require('path');
+var open = require("open");
+open("http://localhost:8001");
 module.exports = {
     entry: {
         example:"./example/example.js"

@@ -22,9 +22,12 @@
     "webpack": "^1.12.14"
   },
   "dependencies": {
+    "jquery": "^3.1.1",
     "lodash": "^4.6.1",
+    "open": "^0.0.5",
     "react-redux": "^4.4.1",
     "redux-thunk": "^2.0.1",
+    "rx": "^4.1.0",
     "webpack-dev-server": "^1.14.1"
   }
 }

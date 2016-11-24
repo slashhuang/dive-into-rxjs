@@ -1,13 +1,12 @@
-# redux-annotation
+# dive-into-rxjs
 
-- 对redux源码进行中文标注，分离处理警告和异常的代码,使redux逻辑更加清楚
-- 主程序入口src/index.js
-- 逻辑代码量200行左右
+- 对rxjs的使用编写demo示例
+- 对rxjs的源码及设计思想做简单分析
 
 ### 使用
 ```
   $ cnpm install
   $ cnpm install webpack -g
-  $ npm start 
+  $ npm start
   $ open http://localhost:8001/
 ```
