@@ -2,11 +2,26 @@
 <head>
     <meta charset="utf-8">
     <title>dive-into-rxJS</title>
+    <style>
+        [id='*']{
+            float:left;
+            width:300px;
+            height:100px;
+        }
+        #fromEvent{
+            background:purple;
+        }
+        #create{
+            background:purple;
+        }
+    </style>
   </head>
   <body class="directory">
     <input id="input" type="text" placeholder="测试rxJS" autocomplete="off">
-    <div id='results'></div>
-    <!-- <script type="text/javascript" src='/dist/fromEvent.js'></script> -->
+    <div id='fromEvent'>fromEvent测试</div>
+
+    <div id='create'>Observable.create测试</div>
+    <script type="text/javascript" src='/dist/fromEvent.js'></script>
     <script type="text/javascript" src='/dist/creator.js'></script>
   </body>
 </html>

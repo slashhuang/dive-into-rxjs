@@ -5,7 +5,7 @@
 let Rx = require('rx');
 let $ = require('jquery');
 const $input = $('#input');
-const $results = $('#results');
+const $results = $('#fromEvent');
 
 /* Only get the value from each key up */
 var keyups = Rx.Observable.fromEvent($input, 'keyup')

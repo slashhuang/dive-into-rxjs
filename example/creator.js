@@ -5,7 +5,7 @@
 let Rx = require('rx');
 let $ = require('jquery');
 const $input = $('#input');
-const $results = $('#results');
+const $results = $('#create');
 
 let Creator= Rx.Observable.create((observer)=>{
     $.ajax({
