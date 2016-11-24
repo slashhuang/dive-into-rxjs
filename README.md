@@ -42,13 +42,15 @@
 ```javascript
     [observerInstance/*rxJS实例*/].subscribe((data)=>/*自定义处理方式*/)
     # 注册观察者的方式和redux的实现方式是一模一样的。
-    # [可以参考我改写的redux源码注释](https://github.com/slashhuang/redux-annotation/blob/master/src/createStore.js)
 ```
+>[观察者相关可以参考redux源码注释](https://github.com/slashhuang/redux-annotation/blob/master/src/createStore.js)
+
 3. 通知执行
 ```javascript
     observer.next(data/*通知的数据*/)
-    # rxJS的各种api命名和python的generator很类似，同时又在具体代码编写上和Promise保持了很高的一致性
 ```
+> rxJS的各种api命名和python的generator很类似，同时又在具体代码编写上和Promise保持了很高的一致性
+
 
 ## 本项目持续更新中，欢迎提出PR
 
