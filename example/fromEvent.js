@@ -49,6 +49,7 @@ function searchWikipedia (term) {
 let suggestions = distinct.flatMapLatest(searchWikipedia);
 suggestions.subscribe(
   data => {
+    console.log(1)
     $results
       .empty()
       .append($.map(data[1], value =>  $('<li>').text(value)))

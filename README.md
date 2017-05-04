@@ -8,7 +8,6 @@
 ### 使用
 ```bash
   $ cnpm install
-  $ cnpm install webpack -g
   $ npm start
 
 ```

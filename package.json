@@ -4,7 +4,7 @@
   "description": "dive into rxjs",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node build.js "
+    "start": "opn http://localhost:8080 && node build.js "
   },
   "keywords": [
     "rxjs",

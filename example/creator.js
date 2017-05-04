@@ -19,6 +19,7 @@ let Creator= Rx.Observable.create((observer)=>{
 });
 Creator.subscribe(
   data => {
+    alert(1)
     $results
       .empty()
       .append($.map(data[1], value =>  $('<li>').text(value)))
