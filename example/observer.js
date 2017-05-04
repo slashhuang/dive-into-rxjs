@@ -5,16 +5,17 @@
 import Rx from 'rxjs/Rx';
 // https://github.com/ReactiveX/rxjs/blob/master/doc/observer.md
 /*
- * The Observable object represents the object that sends notifications (the provider);
- * the Observer object represents the class that receives them (the observer).
+ * An Observer is a consumer of values delivered by an Observable
+ * Observers are simply a set of callbacks,
+ * one for each type of notification delivered by the Observable: next, error, and complete.
  */
-var subscriberObs = Rx.Observer.create(
-     x=>console.log('Next: ' + x),
-     err=>console.log('Error: ' + err),
-     ()=>console.log('Completed')
-)
+ var subscriberObs = {
+    next:   x=>console.log('Next: ' + x),
+    complete: ()=>console.log('Completed'),
+    error: err=>console.log('Error: ' + err),
+}
 //直接call observer的instance 方法
-subscriberObs.onNext(42);
-subscriberObs.onNext(44);
-subscriberObs.onError(43);
-subscriberObs.onCompleted();
+subscriberObs.next(42);
+subscriberObs.next(44);
+subscriberObs.error(43);
+subscriberObs.complete();

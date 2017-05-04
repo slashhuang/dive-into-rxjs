@@ -13,4 +13,5 @@ import Rx from 'rxjs/Rx';
 },
 //http://stackoverflow.com/questions/28145890/what-is-a-scheduler-in-rxjs
 Rx.Scheduler.timeout)
+
  startObs.subscribe(val=>console.log(val))
