@@ -1,55 +1,105 @@
 # dive-into-rxjs
 
-> 对rxjs的使用编写demo示例并对rxJS的设计思想做简单分析
+> 对rxjs 5的使用编写demo示例并对rxJS的设计思想做简单分析
+
+> 由于rxjs 5已由版本4迁移，部分api的名字有些变更，需要开发者注意
 
 > 主程序示例代码在'''/example/*.js'''下面
 
 
 ### 使用
+
 ```bash
+
   $ cnpm install
   $ npm start
 
 ```
+### rxjs核心理念分层
+```bash
 
-### 传统数据操作和rxJS的数据流处理方式
-```javascript
-    # 传统方式
-    var executorFn=(data)=>{/*加工你的数据*/};
-    $.ajax({
-            ...options,
-            success:(data){
-                executorFn(data)
-            }
-        })
+    Observable:
+        事件或者数据源invokable
 
-    # rxJS的数据流处理方式
-    let Test = Rx.Observable.create(
-                (observer)=>$.ajax(options)
-                             .promise()
-                             .then((data)=>observer.next(data)))
-    Test.subscribe(data => {/*加工你的数据*/})
+    Observer:
+        监听observerable的信息分发
+
+    Subscription:
+        执行Observable的数据
+
+    Operators:
+        纯函数，以函数式风格处理数据，比如map, filter, concat, flatMap等操作符.
+
+    Subject:
+        和eventEmitter基本相同，唯一的方式分发数据或者事件到多个Observer.
+
+    Schedulers:
+        中心化处理并发，允许我们协调计算。比如e.g. setTimeout or requestAnimationFrame or others.
 ```
 
-### 数据通知机制
 
-1. 定义数据源的不同方式
-```javascript
-    rx.Observable.fromEvent
-    rx.Observable.create(observer=>obserer.next(value)/*执行通知*/)
+### why rxjs
+
+1. purity: 采用纯函数加工数据
+
+```js
+    //老的写法
+    var count = 0;
+    var button = document.querySelector('button');
+    button.addEventListener('click', () => console.log(`Clicked ${++count} times`));
+
+    //对比
+    var button = document.querySelector('button');
+    Rx.Observable.fromEvent(button, 'click')
+        //https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/scan.md
+      .scan(count => count + 1, 0)
+      .subscribe(count => console.log(`Clicked ${count} times`));
+
 ```
 
-2. 注册数据通知
-```javascript
-    [observerInstance/*rxJS实例*/].subscribe((data)=>/*自定义处理方式*/)
-    # 注册观察者的方式和redux的实现方式是一模一样的。
-```
->[观察者设计方案可以参考redux的实现](https://github.com/slashhuang/redux-annotation/blob/master/src/createStore.js)
+2. flow: 通知机制的流式处理
 
-3. 通知执行
-```javascript
-    observer.next(data/*通知的数据*/)
+```js
+    // 以典型的button每秒点击为例。 采用rx提供的throttleTime操作符
+    const button = document.querySelector('button');
+    Rx.Observable.fromEvent(button, 'click')
+      .throttleTime(1000)
+      .scan(count => count + 1, 0)
+      .subscribe(count => console.log(`Clicked ${count} times`));
+
 ```
+
+**类似的operator**
+
+```bash
+    filter, delay, debounceTime, take, takeUntil, distinct, distinctUntilChanged etc.
+```
+
+3. values: 数据处理
+
+```js
+    const button = document.querySelector('button');
+    Rx.Observable.fromEvent(button, 'click')
+      .throttleTime(1000)
+      .map(event => event.clientX)
+      .scan((count, clientX) => count + clientX, 0)
+      .subscribe(count => console.log(count))
+```
+
+**类似的operator**
+
+```bash
+    pluck, pairwise, sample etc.
+```
+
+
+## 核心概念分解
+
+### Observable
+
+
+
+
 > rxJS的各种api命名和lodash很像
 
 > rxJS的通知执行机制python的generator很类似，
