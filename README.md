@@ -16,13 +16,14 @@
 
 ```
 ### rxjs核心理念分层
+
 ```bash
 
     Observable:
-        事件或者数据源invokable
+        proveider ==> 事件或者数据源invokable
 
     Observer:
-        监听observerable的信息分发
+        consumer ==> 监听observerable的信息分发
 
     Subscription:
         执行Observable的数据
@@ -37,6 +38,20 @@
         中心化处理并发，允许我们协调计算。比如e.g. setTimeout or requestAnimationFrame or others.
 ```
 
+### 核心思想
+
+1. Observerable核心
+
+> Observable=>Observer: Subscribing to an Observable is analogous to calling a Function.
+
+```bash
+
+    Creating Observables
+    Subscribing to Observables
+    Executing the Observable
+    Disposing Observables
+
+```
 
 ### why rxjs
 
@@ -109,7 +124,7 @@
 
 ## 本项目持续更新中，欢迎提出PR
 
-
+[rxjs 5 github文档](https://github.com/ReactiveX/rxjs/tree/master/doc)
 
 ### Copyright
 
