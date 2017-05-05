@@ -5,7 +5,7 @@
  https://github.com/ReactiveX/rxjs/blob/master/doc/operators.md
  */
 
- /*
-  * create observable
-  */
- require('./createObservable')
+/*
+ * filtering observables
+ */
+require('./filtering-operators')
