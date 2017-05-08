@@ -81,6 +81,9 @@ o_create.subscribe(Observer)
  * Creates an output Observable which concurrently emits all values from every given input Observable
  * 
  * merge(observables: ...ObservableInput, concurrent: number, scheduler: Scheduler)
+ *
+ *
+ * timer(initialDelay: number | Date, period: number, scheduler: Scheduler): 
  */
 const clicks = Observable.fromEvent(document, 'click');
 const timer = Observable.interval(1000);
@@ -95,7 +98,15 @@ const clicksOrTimer = Observable.merge(clicks, timer);
  */
 const observablesArr = [1,2,3].map(n=>Observable.timer(n*2000, 1000))
 const o_combineLatest = Observable.combineLatest(observablesArr);
-o_combineLatest.subscribe(Observer);
+// o_combineLatest.subscribe(Observer);
+/*
+ * Creates an Observable from an Array, an array-like object, 
+ * a Promise, an iterable object, or an Observable-like object.
+ * 
+ * from(ish: ObservableInput<T>, scheduler: Scheduler)
+ */
+const o_from = Observable.from([1,2,'fuck']);
+o_from.subscribe(Observer);
 
 
 

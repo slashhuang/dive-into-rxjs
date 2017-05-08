@@ -1,6 +1,17 @@
 /*
  * @Author slashhuang
  * 17/5/4
+ * 
+ *
+An interface for a consumer of push-based notifications
+delivered by an Observable.
+
+interface Observer<T> {
+  closed?: boolean;
+  next: (value: T) => void;
+  error: (err: any) => void;
+  complete: () => void;
+}
  */
 import Rx from 'rxjs/Rx';
 // https://github.com/ReactiveX/rxjs/blob/master/doc/observer.md
