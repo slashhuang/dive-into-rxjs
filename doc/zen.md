@@ -104,7 +104,9 @@ new Observables
 
 
 
+## 参考资料
 
+[rxjs google benlesh talk](https://www.youtube.com/watch?v=KOOT7BArVHQ)
 
 
 
