@@ -4,6 +4,8 @@
 
 > 由于rxjs 5已由版本4迁移，部分api的名字有些变更，需要开发者注意
 
+> [rxjs4 迁移至 rxjs5 文档](https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md)
+
 > 主程序示例代码在'''/example/*.js'''下面
 
 

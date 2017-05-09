@@ -18,7 +18,18 @@ const Observer = {
   * combineLatest(other: ObservableInput, project: function): Observable
   */
  import{ Observable}  from 'rxjs/Rx' 
- const o_of1 = Observable.of(1,2,3)
- const o_of = Observable.of(4,5,6,1000)
- const o_combineLatest = o_of1.combineLatest(o_of,(f,o)=>(f+o))
- o_combineLatest.subscribe(Observer)
+ const o_of1 = Observable.interval(1000)
+ const o_of = Observable.timer(1000,1000)
+ const o_combineLatest = o_of1.combineLatest(o_of,(f,o)=>(f+'--'+o))
+ const subsciber_c = o_combineLatest.subscribe(Observer)
+ /*
+  * Adds a tear down to be called during the unsubscribe() of this Subscription.
+  */
+ const sub_0 = subsciber_c.add(()=>{console.log('tear down logic 0')})
+ const sub_1 = subsciber_c.add(()=>{console.log('tear down logic 1')})
+ const sub_2 = subsciber_c.add(()=>{console.log('tear down logic 2')})
+ subsciber_c.remove(sub_2)
+ subsciber_c.unsubscribe()
+
+
+ 
