@@ -5,6 +5,12 @@
 - resilient ==> react to failure
 - responsive ==> react to users
 
+dataflow and compositon of events
+
+
+
+
+
 
 ## event event-driven
 
@@ -61,6 +67,20 @@ import for scale out : location transparency, resilience
 5. actors
 6. handling falure==>supervisors
 7. scale out ==>distributed actors
+
+
+
+
+### observable
+
+what is it?
+how ist it different from an iterator?
+	- push data to the client when data is ready
+	- may be sync or async
+	how is it different from the observer pattern?
+	 	it's that ,plus
+	 		signal end of data stream
+	 		propagate error
 
 
 
