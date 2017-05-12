@@ -35,7 +35,7 @@ app.get('/',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'./index.html'))
 })
 // app.use(express.static(__dirname))
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8000
 module.exports = app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}, Ctrl+C to stop`)
 })

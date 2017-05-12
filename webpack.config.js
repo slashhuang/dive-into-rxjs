@@ -7,6 +7,7 @@ const fs = require('fs')
 const webpack = require('webpack')
 const contextFilePath = path.resolve(__dirname,'example')
 module.exports = {
+    devtool:"sourcemap",
     entry: fs.readdirSync(contextFilePath).reduce((pre,cur)=>{
        let baseName = path.basename(cur,'.js')
        let fullPath = path.resolve(contextFilePath,cur)

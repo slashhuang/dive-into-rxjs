@@ -116,7 +116,6 @@
 
 
 
-
 > rxJS的各种api命名和lodash很像
 
 > rxJS的通知执行机制python的generator很类似，

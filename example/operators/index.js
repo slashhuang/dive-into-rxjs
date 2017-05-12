@@ -9,3 +9,7 @@
  * filtering observables
  */
 require('./filtering-operators')
+/*
+ * switchMap operators
+ */
+require('./switchMap')
