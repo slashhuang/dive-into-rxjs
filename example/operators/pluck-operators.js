@@ -6,15 +6,15 @@ import Rx from 'rxjs/Rx';
 
 //基本的transform操作 map pluck select ===> MapObservable
 // map or select (the two are synonymous)
+console.log(Rx);
 const originSource = Rx.Observable
-    .fromArray([
+    .from([
         { value: 0 },
         { value: 1 },
         { value: 2 }
     ])
 //这两者等价
 const pluckObs = originSource.pluck('value');
-const selectObs = originSource.select(val=>val).pluck('value')
 const Subscribers = [
     val=>console.log('next with '+val),
     err=>console.log('err'+err),
@@ -22,5 +22,3 @@ const Subscribers = [
 ]
 //打印0,1,2
 pluckObs.subscribe.apply(pluckObs,Subscribers)
-//打印0,1,2
-selectObs.subscribe.apply(selectObs,Subscribers)

@@ -9,6 +9,10 @@
 > 主程序示例代码在'''/example/*.js'''下面
 
 
+## 参考文档
+[learn rxjs](https://www.learnrxjs.io/)
+[reactive io](http://reactivex.io/rxjs/)
+
 ### 使用
 
 ```bash

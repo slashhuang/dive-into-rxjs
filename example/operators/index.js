@@ -13,3 +13,7 @@ require('./filtering-operators')
  * switchMap operators
  */
 require('./switchMap')
+/**
+ * pluck operator
+ */
+require('./pluck-operators');

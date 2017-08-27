@@ -4,7 +4,8 @@
   "description": "dive into rxjs",
   "main": "./src/index.js",
   "scripts": {
-    "start": "opn http://localhost:8000 && node build.js "
+    "start": "opn http://localhost:8000 && node build.js ",
+    "dev": "opn http://localhost:8080 && webpack-dev-server "
   },
   "keywords": [
     "rxjs",
