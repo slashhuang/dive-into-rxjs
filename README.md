@@ -12,6 +12,7 @@
 ## 参考文档
 [learn rxjs](https://www.learnrxjs.io/)
 [reactive io](http://reactivex.io/rxjs/)
+[reactive programming](https://en.wikipedia.org/wiki/Reactive_programming)
 
 ### 使用
 
